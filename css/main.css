@@ -1,0 +1,128 @@
+body {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+/*clases reutilizables*/
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-uppercase{
+  text-transform: uppercase;
+}
+header{
+  width: 100%;
+  height: 100px;
+  background-color: #1da1f2;
+}
+h1{
+  width: 100%;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  color:#fff;
+}
+section{
+  width: 100%;
+  height:1000px;
+  display: inline-block;
+  background-image: url(../assets/images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.container{
+  width: 20%;
+  height: 160px;
+  display: inline-block;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-left: 70px;
+  padding-left: 20px;
+  color: #657786;
+  position: relative;
+}
+#container-text{
+  margin-top: 20px;
+  width: 100%;
+  height: 140px;
+}
+#line{
+  color: #657786;
+}
+.text{
+  font-size: 14px;
+  letter-spacing: .01em;
+}
+.text-title{
+  font-weight: bold;
+}
+.text-color{
+  color: #1da1f2;
+  font-weight: bold;
+}
+span{
+  display: block;
+  margin-bottom: 10px;
+}
+.container-tweet{
+  width: 500px;
+  height:210px;
+  background-color: #fff;
+  position: absolute;
+  top: 120px;
+  right: 70px;
+  text-align: center;
+}
+#sumit-message{
+  padding: 10px;
+  background-color: #A4D9F9;
+  color: #fff;
+  display: block;
+  margin-top: 10px;
+  margin-left: 320px;
+  border-radius: 20px;
+  border: none;
+  line-height: 24px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-size: 16px;
+  font-weight: bold;
+}
+#box-tweets{
+  width: 570px;
+  height: 800px;
+  position: absolute;
+  top: 120px;
+  left:500px;
+  overflow: hidden;
+}
+p{
+  width: 520px;
+  height:auto;
+  background-color: #fff;
+  margin:0 25px;
+  padding: 0 5px;
+  float: inherit;
+}
+textarea{
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid #A4D9F9;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  line-height: 14px;
+}
+article{
+  width: 500px;
+  height: 20px;
+  background-color: red;
+  display: inline-block;
+  float: inherit;
+}
+#counter{
+  display: inline;
+}
