@@ -1,8 +1,19 @@
 // Versión 0.0.1
 // Diseñar un formulario que permita ingresar un texto y un botón para "twittear".
+
+// Agrandando el input cuando se pulse click
+window.addEventListener('load', function() {
+  // var textarea = document.body.children[1].children[2].children[0].children[0];
+  var input = document.body.children[1].children[2].children[0].children[0];
+  input.addEventListener('click', function() {
+    input.setAttribute('id', 'message-input');
+  });
+});
+// Asignando la variable submitButton al boton
 var submitButton = document.getElementById('sumit-message');
-var messageArray = [];
-// En el evento, obtener el texto.
+var messageArray = [];// creando un array para almacenar los mensajes
+
+// agregando los mensajes a un array
 function addToAarray() {
   var message = document.getElementById('message-input').value;
   messageArray.push(message);
@@ -13,8 +24,6 @@ function printArray() {
   var text = document.createTextNode(message);
   parrafo.appendChild(text);
   document.body.children[1].children[1].appendChild(parrafo);
-  // var space = document.createElement('article');
-  // document.body.children[1].children[1].appendChild(space);
   text = '';
   for (var i = 0;i < messageArray.length;i++) {
     text += messageArray[i] + '<br>' ;
@@ -22,7 +31,7 @@ function printArray() {
   showTime();
   document.body.children[1].children[1].appendChild(parrafo).innerHTML = parrafo;
 }
-// Agregando un evento de click al botón o de submit al formulario.
+// Agregando un evento de click al botón.
 var click = submitButton.addEventListener('click', function() {
   var message = document.getElementById('message-input').value;
   var parrafo = document.createElement('p');

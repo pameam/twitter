@@ -90,6 +90,10 @@ span{
   font-size: 16px;
   font-weight: bold;
 }
+#disable{
+  background-color: #1da1f2;
+  color: #fff;
+}
 #box-tweets{
   width: 570px;
   height: 800px;
@@ -102,26 +106,30 @@ p{
   width: 520px;
   height:auto;
   background-color: #fff;
-  margin:0 25px;
+  margin:0 5 20 25px;
   padding: 0 5px;
+  word-wrap: break-word;
   float: inherit;
 }
-textarea{
+#message-input2{
   text-align: center;
   display: inline-block;
-  margin-top: 20px;
   border: 1px solid #A4D9F9;
-  border-radius: 8px;
-  display: inline-block;
-  text-align: center;
+  margin-top: 20PX;
+  border-radius: 12px;
   line-height: 14px;
+  width: 420px;
+  height: 32px;
 }
-article{
-  width: 500px;
-  height: 20px;
-  background-color: red;
+#message-input{
   display: inline-block;
-  float: inherit;
+  border: 1px solid #A4D9F9;
+  border-radius: 12px;
+  margin-top: 20PX;
+  line-height: 14px;
+  width: 420px;
+  height: 92px;
+  word-wrap: break-word;
 }
 #counter{
   display: inline;
