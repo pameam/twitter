@@ -10,7 +10,7 @@ header{
   width: 100%;
   height: 46px;
   background-color:#fff;
-  display: inline-block;
+  display:block;
   text-align: center;
 }
 .firstMenu{
@@ -50,9 +50,6 @@ a{
   text-align: center;
   border-radius: 50px;
 }
-.search-input{
-  background-color: #f5f8fa;
-}
 #container-search-click{
   width: 210px;
   height: 25px;
@@ -65,6 +62,7 @@ a{
   color: #76848d;
   }
 .search-input{
+  background-color: #f5f8fa;
   margin-top: 3px;
   border: none;
   outline:0px;
@@ -80,7 +78,7 @@ a{
   padding-bottom: 10px;
 }
 #button-twittear{
-  padding: 8px;
+  padding: 6px;
   background-color:#4ab3f4;
   color: #fff;
   border-radius: 50px;

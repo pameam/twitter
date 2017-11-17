@@ -45,6 +45,22 @@ window.addEventListener('load', function() {
     parrafo.appendChild(text);
     document.body.children[2].children[1].children[0].children[1].children[0].appendChild(parrafo);
     parrafo.innerHTML = message;
+    // Agregar la hora en que se publicó el tweet. En el formato de 24 horas: hh:mm.
+    var now = new Date() ;
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var second = now.getSeconds();
+    if (hours < 10) {
+      hours = '0' + hours ;
+    }
+    if (minutes < 10) {
+      minutes = '0' + minutes ;
+    }
+    var hourShow = hours + ':' + minutes + ':' + second;
+    var showTime = document.createElement('div');
+    var textd = document.createTextNode(hourShow);
+    showTime.appendChild(textd);
+    document.body.children[2].children[1].children[0].children[1].children[0].appendChild(showTime);
     clearText();
   });
   // Limpiando contenedor del tweet
@@ -61,29 +77,52 @@ window.addEventListener('load', function() {
     // Contar la cantidad de caracteres de forma regresiva.
     var counter = document.getElementById('counter');
     var message = document.getElementById('message-input');
-    message.addEventListener('keyup', function() {
-      'use strict';// uso estricto
-      counter.textContent = 140 - this.value.length;
-      // counter.value = counter.value.length - 140;
-      // Versión 0.0.3
-      //
-      if (counter.textContent < 0) {// Si pasa los 140 caracteres, mostrar el contador en negativo.
-        counter.style.color = '#f00';
-        document.getElementById('sumit-message').disabled = true; // Si pasa los 140 caracteres, deshabilitar el botón.
-      // Si pasa los 120 caracteres, mostrar el contador con OTRO color.
-      } else if (counter.textContent < 10) {
-        counter.style.color = '#32CD32';
-        document.getElementById('sumit-message').disabled = false;
-      // Si pasa los 130 caracteres, mostrar el contador con OTRO color.
-      } else if (counter.textContent < 20) {
-        counter.style.color = '#FFD700';
-        document.getElementById('sumit-message').disabled = false;
-      } else {
-        counter.style.color = '#000';
-        document.getElementById('sumit-message').disabled = false;
-      }
-    });
+    // message.addEventListener('keyup', function() {
+    //   'use strict';// uso estricto
+    //   counter.textContent = 140 - this.value.length;
+    //   // counter.value = counter.value.length - 140;
+    //   // Versión 0.0.3
+    //   //
+    //   if (counter.textContent < 0) {// Si pasa los 140 caracteres, mostrar el contador en negativo.
+    //     counter.style.color = '#f00';
+    //     document.getElementById('sumit-message').disabled = true; // Si pasa los 140 caracteres, deshabilitar el botón.
+    //   // Si pasa los 120 caracteres, mostrar el contador con OTRO color.
+    //   } else if (counter.textContent < 10) {
+    //     counter.style.color = '#32CD32';
+    //     document.getElementById('sumit-message').disabled = false;
+    //   // Si pasa los 130 caracteres, mostrar el contador con OTRO color.
+    //   } else if (counter.textContent < 20) {
+    //     counter.style.color = '#FFD700';
+    //     document.getElementById('sumit-message').disabled = false;
+    //   } else {
+    //     counter.style.color = '#000';
+    //     document.getElementById('sumit-message').disabled = false;
+    //   }
+    // });
   }
+});
+var counter = document.getElementById('counter');
+var message = document.getElementById('message-input');
+message.onkeyup = function() {
+  'use strict';// uso estricto
+  counter.textContent = 140 - this.value.length;
+  // Versión 0.0.3
+  if (counter.textContent < 0) {// Si pasa los 140 caracteres, mostrar el contador en negativo.
+    counter.style.color = '#f00';
+    document.getElementById('sumit-message').disabled = true; // Si pasa los 140 caracteres, deshabilitar el botón.
+    // Si pasa los 120 caracteres, mostrar el contador con OTRO color.
+  } else if (counter.textContent < 10) {
+    counter.style.color = '#32CD32';
+    document.getElementById('sumit-message').disabled = false;
+    // Si pasa los 130 caracteres, mostrar el contador con OTRO color.
+  } else if (counter.textContent < 20) {
+    counter.style.color = '#FFD700';
+    document.getElementById('sumit-message').disabled = false;
+  } else {
+    counter.style.color = '#000';
+    document.getElementById('sumit-message').disabled = false;
+  }
+};
 
 // Versión 0.0.4
 //
@@ -94,22 +133,3 @@ window.addEventListener('load', function() {
 //
 // Si la cantidad de caracteres ingresados (sin dar un enter), supera al tamaño del textarea por defecto, debe de agregarse una línea más para que no
 // aparezca el scroll. (Si en caso aplica)
-
-// Versión 0.0.6 (Extra)
-//
-// Agregar la hora en que se publicó el tweet. En el formato de 24 horas: hh:mm.
-
-// function showTime() {
-//   var now = new Date() ;
-//   var hours = now.getHours();
-//   var minutes = now.getMinutes();
-//   if (hours < 10) {
-//     hours = '0' + hours ;
-//   }
-//   if (minutes < 10) {
-//     minutes = '0' + minutes ;
-//   }
-//   var hourShow = document.createElement('div');
-//   document.body.children[1].children[1].appendChild(hourShow);
-//   document.getElementsByTagName('div').textContent = hours + ':' + minutes ;
-});
