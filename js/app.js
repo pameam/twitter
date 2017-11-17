@@ -4,13 +4,31 @@
 // Agrandando el input cuando se pulse click
 window.addEventListener('load', function() {
   // var textarea = document.body.children[1].children[2].children[0].children[0];
-  var input = document.body.children[1].children[2].children[0].children[0];
-  input.addEventListener('click', function() {
-    input.setAttribute('id', 'message-input');
+  var textarea = document.getElementById('message-input2');
+  // var input = document.body.children[1].children[2].children[0].children[0];
+  textarea.addEventListener('click', function() {
+    textarea.setAttribute('id', 'message-input');
   });
 });
+//
+// window.addEventListener('load', function(event) {
+//   var title = document.getElementsByTagName('h1')[0];
+//   var div = document.getElementsByTagName('div')[0];
+//   title.addEventListener('mouseover', function() {
+//     title.classList.add('textColor');
+//   });
+//   title.addEventListener('mouseout', function() {
+//     title.classList.remove('textColor');
+//   });
+//   div.addEventListener('click', function() {
+//     div.classList.toggle('big');
+//   });
+// });
+
+
 // Asignando la variable submitButton al boton
-var submitButton = document.getElementById('sumit-message');
+var submitButton = document.body.children[1].children[2].children[0].children[2];
+// var submitButton = document.getElementById('sumit-message');
 var messageArray = [];// creando un array para almacenar los mensajes
 
 // agregando los mensajes a un array
@@ -28,8 +46,8 @@ function printArray() {
   for (var i = 0;i < messageArray.length;i++) {
     text += messageArray[i] + '<br>' ;
   }
-  showTime();
-  document.body.children[1].children[1].appendChild(parrafo).innerHTML = parrafo;
+//   showTime();
+//   document.body.children[1].children[1].appendChild(parrafo).innerHTML = parrafo;
 }
 // Agregando un evento de click al botón.
 var click = submitButton.addEventListener('click', function() {
@@ -38,7 +56,19 @@ var click = submitButton.addEventListener('click', function() {
   var text = document.createTextNode(message);
   parrafo.appendChild(text);
   document.body.children[1].children[1].appendChild(parrafo);
+
   parrafo.innerHTML = message;
+  // function myFunction() {
+  //   var d = new Date();
+  //   var h = d.getHours();
+  //   var m = d.getMinutes();
+  //   var s = d.getSeconds();
+  // }
+  // var parrafoh = document.createElement('div');
+  // var texth = document.createTextNode(d);
+  // parrafoh.appendChild(texth);
+  // document.body.children[1].children[1].appendChild(parrafoh);
+  // parrafoh.innerHTML = d ;
   clearText();
 });
 // Limpiando contenedor del tweet
@@ -49,7 +79,7 @@ function clearText() {
 // Versión 0.0.2
 //
 // No ingresar texto vacío (deshabilitar el botón de "twittear").
-var message = document.getElementById('message-input').value;
+var message = document.body.children[1].children[2].children[0].children[0];
 if (message = '') {
   document.getElementById('sumit-message').disabled = false;
 } else {
@@ -94,17 +124,18 @@ message.onkeyup = function() {
 // Versión 0.0.6 (Extra)
 //
 // Agregar la hora en que se publicó el tweet. En el formato de 24 horas: hh:mm.
-function showTime() {
-  var now = new Date() ;
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  if (hours < 10) {
-    hours = '0' + hours ;
-  }
-  if (minutes < 10) {
-    minutes = '0' + minutes ;
-  }
-  var hourShow = document.createElement('div');
-  document.body.children[1].children[1].appendChild(hourShow);
-  document.getElementsByTagName('div').textContent = hours + ':' + minutes ;
-}
+
+// function showTime() {
+//   var now = new Date() ;
+//   var hours = now.getHours();
+//   var minutes = now.getMinutes();
+//   if (hours < 10) {
+//     hours = '0' + hours ;
+//   }
+//   if (minutes < 10) {
+//     minutes = '0' + minutes ;
+//   }
+//   var hourShow = document.createElement('div');
+//   document.body.children[1].children[1].appendChild(hourShow);
+//   document.getElementsByTagName('div').textContent = hours + ':' + minutes ;
+//}

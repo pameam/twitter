@@ -75,7 +75,7 @@ span{
   right: 70px;
   text-align: center;
 }
-#sumit-message{
+button{
   padding: 10px;
   background-color: #A4D9F9;
   color: #fff;
@@ -90,10 +90,10 @@ span{
   font-size: 16px;
   font-weight: bold;
 }
-#disable{
+/*#disable{
   background-color: #1da1f2;
   color: #fff;
-}
+}*/
 #box-tweets{
   width: 570px;
   height: 800px;
@@ -121,6 +121,16 @@ p{
   width: 420px;
   height: 32px;
 }
+#message-input2{
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #A4D9F9;
+  margin-top: 20PX;
+  border-radius: 12px;
+  line-height: 14px;
+  width: 420px;
+  height: 62px;
+}
 #message-input{
   display: inline-block;
   border: 1px solid #A4D9F9;
@@ -128,7 +138,9 @@ p{
   margin-top: 20PX;
   line-height: 14px;
   width: 420px;
-  height: 92px;
+  height: 52px;
+  padding-left: 10px;
+  padding-top: 10px;
   word-wrap: break-word;
 }
 #counter{
