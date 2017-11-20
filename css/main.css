@@ -1,10 +1,17 @@
-body {
-  box-sizing: border-box;
+* {
   margin:0;
   padding:0;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 20px;
+  box-sizing: border-box;
+}
+.text-uppercase{
+  text-transform: uppercase;
+}
+body{
+  width: 100%;
+  height: 100%;
 }
 header{
   width: 100%;
@@ -13,24 +20,43 @@ header{
   display:block;
   text-align: center;
 }
+.container-header{
+  max-width: 1060px;
+  min-width: 590px;
+  width:100%;
+  height: 46px;
+  margin-left: 109.33px;
+  display:block;
+  overflow: hidden;
+}
+.nav{
+  padding-left: 0px;
+  height: 46px;
+  text-align: center;
+}
 .firstMenu{
-  width: 30%;
+  width: 35%;
   height: 46px;
   display: inline-block;
 }
 .icon{
-  width: 30%;
+  width:19%;
+  max-width: 530px;
+  min-width: 204px;
   height: 46px;
   display: inline-block;
 }
 .secondMenu{
-  width: 30%;
-  height: 44px;
+  width: 45%;
+  height: 46px;
   display: inline-block;
+}
+#md{
+  margin-right: 0px;
 }
 ul li{
   display: inline-block;
-  margin: 0 0 0 20px;
+  margin-right: 17px;
   text-align: center;
   line-height: 25%;
 }
@@ -41,18 +67,20 @@ a{
 }
 .fa-twitter{
   color:#1da1f2;
+  padding-top: 15px;
 }
 #container-search{
-  width: 210px;
-  height: 25px;
+  width: 225px;
+  height: 30px;
   background-color: #f5f8fa;
   border: 2px solid #e6ecf0;
   text-align: center;
   border-radius: 50px;
+  vertical-align: middle;
 }
 #container-search-click{
-  width: 210px;
-  height: 25px;
+  width: 225px;
+  height: 30px;
   background-color: #fff;
   border: 2px solid #4ab3f4;
   text-align: center;
@@ -63,7 +91,7 @@ a{
   }
 .search-input{
   background-color: #f5f8fa;
-  margin-top: 3px;
+  margin-top: 6px;
   border: none;
   outline:0px;
 }
@@ -75,7 +103,11 @@ a{
 }
 #list{
   margin-top: 0px;
-  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  height: 46px;
+  text-align: center;
 }
 #button-twittear{
   padding: 6px;
@@ -100,125 +132,173 @@ a:hover{
 /*estilos de la seccion*/
 .container{
   width: 100%;
-  height:800px;
+  height:100%;
   padding-top:  9px;
   background-color: #e6ecf0;
+  column-count:3;
+  overflow: hidden;
 }
+/* seccion izquierda*/
 #box{
-  width: 28%;
+  width:100%;
   height:800px;
-  display: inline-block;
-}
-#box1{
-  width: 40%;
-  height:800px;
-  margin: 0;
-  padding: 0;
   display: inline-block;
 }
 .container-perfil{
-  width: 100%;
   height:800px;
   overflow: hidden;
-}
-.tendence{
-  width: 288px;
-  height:200px;
-  background-color:#fff;
-  float: right;
+  margin-left: 56.200px;
 }
 .box-perfil{
   width: 288px;
   height:95px;
   background-color:#4ab3f4;
+  color: #66757f;
+  display: inline-block;
   float: right;
+}
+.tendence{
+  width: 288px;
+  height:85px;
+  background-color:#fff;
+  float: right;
+  display: inline-block;
+}
+.text{
+  font-size: 14px;
+  letter-spacing: .01em;
+}
+.text-title{
+  font-weight: bold;
+  color:#ffffff;
+}
+.text-color{
+  color: #1da1f2;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+span{
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+/*seccion central*/
+#box1{
+  width:530px;
+  height:800px;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
 }
 .container-twitter{
   width: 100%;
-  height:152px;
+  height:100%;
   text-align: center;
 }
 .contain-tweet{
-  width: 588px;
-  height:150px;
+  width: 516px;
+  height:180px;
   background-color: #e8f5fd;
   margin: 0 auto;
-  z-index: 1;
-}
-.dashboard{
-  width: 288px;
-  height:308px;
-  background-color: #fff;
-  z-index: 2;
-}
-.tweets{
-  width: 588px;
-  height:800px;
-  background-color: #fff;
-  margin: auto;
-}
-#message-input2{
-  width: 504px;
-  height: 36px;
-  border:0.8px solid #c6e7fb;
-  z-index: 3;
-  display: inline-block;
-  margin-top: 8PX;
-  border-radius: 12px;
-  line-height: 14px;
-  outline:0px;
-  padding-top: 8px;
-  padding-left: 7px;
 }
 #message-input{
   display: inline-block;
   border:2px solid #a4d9f9;
   border-radius: 12px;
   margin-top: 8PX;
-  line-height: 14px;
-  width: 504px;
-  height: 50px;
+  line-height: 20px;
   padding-left: 10px;
   padding-top: 10px;
   outline:0px;
   word-wrap: break-word;
+  overflow: hidden;
+  column-gap:10px;
 }
-section button{
-  padding: 10px;
-  background-color: #A4D9F9;
-  color: #fff;
-  display: block;
-  margin-top: 10px;
-  margin-left: 320px;
-  border-radius: 20px;
-  border: none;
-  line-height: 24px;
-  letter-spacing: normal;
-  word-spacing: normal;
-  font-size: 16px;
-  font-weight: bold;
-  outline:0px;
-}
-p{
-  width: 520px;
-  height:auto;
-  border:2px solid #e6ecf0;
-  background-color: #fff;
-  padding: 0 5px;
-  word-wrap: break-word;
-  margin: 0 auto ;
-  border-radius: 12px;
+#counter{
+  display:block;
+  margin-left: 340px;
 }
 .container-tweets{
   width: 100%;
-  height:800px;
+  height:500px;;
   margin-top: 10px;
   text-align: center;
   background-color: #e6ecf0;
 }
 .tweets{
+  width: 100%;
+  height:500px;
+  margin: auto;
   background-color: #e6ecf0;
 }
-#counter{
-  display: inline;
+#sumit-message{
+  padding: 10px;
+  background-color:#4ab3f4;
+  color: #fff;
+  display: block;
+  margin-top: 10px;
+  margin-left: 400px;
+  border-radius: 20px;
+  border: none;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  outline:0px;
+}
+#sumit-message:disabled{
+  background-color: #4AB3F4;
+  color: #fff;
+  opacity: 0.3;
+}
+p{
+  width: 520px;
+  height:auto;
+  background-color: #fff;
+  padding: 0 5px;
+  word-wrap: break-word;
+  margin: 0 ;
+  text-align: left;
+}
+#red{
+  color:red;
+  display:block;
+  margin-left: 340px;
+}
+#blue{
+  color:blue;
+  display:block;
+  margin-left: 340px;
+}
+#green{
+  color:#32CD32;
+  display:block;
+  margin-left: 340px;
+}
+#black{
+  color:black;
+  display:block;
+  margin-left: 340px;
+}
+#showtime{
+  width: 520px;
+  height:auto;
+  background-color: #fff;
+  text-align: right;
+  padding: 0 5px;
+  margin-bottom: 5px;
+}
+/*seccion derecha*/
+#box2{
+  width:80%;
+  height:800px;
+  display: inline-block;
+  float: right;
+}
+.dashboard{
+  width: 288px;
+  height:308px;
+  background-color: #fff;
 }
