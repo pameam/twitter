@@ -22,6 +22,14 @@ window.addEventListener('load', function() {
       counter.setAttribute('id', 'black');
       document.getElementById('sumit-message').disabled = false;
     }
+    // Al presionar enter(/n) que crezca el textarea de acuerdo al tamaño del texto.
+    var message = document.body.children[2].children[1].children[0].children[0].children[0];
+    var enter = event.keyCode; // asignando al enter un valor
+    var rows = event.target.rows;
+    if (enter === 13) {// si la tecla es 13 ;eso significa que es la tecla enter
+      rows = rows + 1; // aumentar una fila
+      message.setAttribute('rows', rows);
+    }
   });
 });
 // Asignando la variable submitButton al boton
@@ -54,15 +62,4 @@ submitButton.addEventListener('click', function() {
     // Limpiando contenedor del tweet
     document.getElementById('message-input').value = '';
   }
-});
-// Al presionar enter(/n) que crezca el textarea de acuerdo al tamaño del texto.
-var message = document.body.children[2].children[1].children[0].children[0].children[0];
-message.addEventListener('keypress', function(event) {
-  var enter = event.keyCode; // asignando al enter un valor
-  // console.log(document.body.children[2].children[1].children[0].children[0].children[0].getAttribute('rows'));
-  var rows = 2;
-  if (enter === 13) {// si la tecla es 13 ;eso significa que es la tecla enter
-    rows = rows + 1; // aumentar una fila
-  }
-  message.setAttribute('rows', rows);
 });
