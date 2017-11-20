@@ -1,44 +1,39 @@
-// Versión 0.0.1
 // Diseñar un formulario que permita ingresar un texto y un botón para "twittear".
-
-// Agrandando el input cuando se pulse click
 window.addEventListener('load', function() {
-  // var textarea = document.body.children[1].children[2].children[0].children[0];
-  var textarea = document.getElementById('message-input2');
-  // var input = document.body.children[1].children[2].children[0].children[0];
-  textarea.addEventListener('click', function() {
-    textarea.setAttribute('id', 'message-input');
-
-    // var counter = document.createElement('div');
-    // var textCounter = document.createTextNode('140');
-    // counter.appendChild(textCounter);
-    // document.body.children[2].children[1].children[0].children[0].appendChild(counter);
-    // var button = document.createElement('button');
-    // var textbutton = document.createTextNode('Twetear');
-    // button.appendChild(textbutton);
-    // document.body.children[2].children[1].children[0].children[0].appendChild(button);
+  // Contar la cantidad de caracteres de forma regresiva.
+  document.getElementById('sumit-message').disabled = true; // desabilitando el boton
+  var message = document.getElementById('message-input');
+  var counter = document.getElementById('counter');
+  message.addEventListener('keyup', function() {
+    'use strict';// uso estricto
+    counter.textContent = 140 - this.value.length;
+    if (counter.textContent < 0) {// Si pasa los 140 caracteres, mostrar el contador en negativo.
+      counter.setAttribute('id', 'red');
+      document.getElementById('sumit-message').disabled = true; // Si pasa los 140 caracteres, deshabilitar el botón.
+      // Si pasa los 120 caracteres, mostrar el contador con OTRO color.
+    } else if (counter.textContent < 10) {
+      counter.setAttribute('id', 'green');
+      document.getElementById('sumit-message').disabled = false;
+      // Si pasa los 130 caracteres, mostrar el contador con OTRO color.
+    } else if (counter.textContent < 20 && counter.textContent >= 10) {
+      counter.setAttribute('id', 'blue');
+      document.getElementById('sumit-message').disabled = false;
+    } else {
+      counter.setAttribute('id', 'black');
+      document.getElementById('sumit-message').disabled = false;
+    }
   });
-  // Asignando la variable submitButton al boton
-  var submitButton = document.body.children[2].children[1].children[0].children[0].children[2];
-  var messageArray = [];// creando un array para almacenar los mensajes
-  // Agregando un evento de click al botón.
-  submitButton.addEventListener('click', function() {
-    // agregando los mensajes a un array
-    function addToAarray() {
-      var message = document.getElementById('message-input').value;
-      messageArray.push(message);
-    }
-    // Agregar el texto al HTML.
-    function printArray() {
-      var parrafo = document.createElement('p');
-      var text = document.createTextNode(message);
-      parrafo.appendChild(text);
-      document.body.children[2].children[1].children[0].children[1].children[0].appendChild(parrafo);
-      text = '';
-      for (var i = 0;i < messageArray.length;i++) {
-        text += messageArray[i] + '<br>' ;
-      }
-    }
+});
+// Asignando la variable submitButton al boton
+var submitButton = document.getElementById('sumit-message');
+document.getElementById('sumit-message').disabled = false;
+// Agregando un evento de click al botón.
+submitButton.addEventListener('click', function() {
+  // No ingresar texto vacío (deshabilitar el botón de "twittear").
+  var message = document.getElementById('message-input').value;
+  if (message === '') {
+    document.getElementById('sumit-message').disabled = true;
+  } else {
     var message = document.getElementById('message-input').value;
     var parrafo = document.createElement('p');
     var text = document.createTextNode(message);
@@ -50,86 +45,24 @@ window.addEventListener('load', function() {
     var hours = now.getHours();
     var minutes = now.getMinutes();
     var second = now.getSeconds();
-    if (hours < 10) {
-      hours = '0' + hours ;
-    }
-    if (minutes < 10) {
-      minutes = '0' + minutes ;
-    }
     var hourShow = hours + ':' + minutes + ':' + second;
     var showTime = document.createElement('div');
     var textd = document.createTextNode(hourShow);
     showTime.appendChild(textd);
     document.body.children[2].children[1].children[0].children[1].children[0].appendChild(showTime);
-    clearText();
-  });
-  // Limpiando contenedor del tweet
-  function clearText() {
+    showTime.setAttribute('id', 'showtime');
+    // Limpiando contenedor del tweet
     document.getElementById('message-input').value = '';
   }
-  // Versión 0.0.2
-  //
-  // No ingresar texto vacío (deshabilitar el botón de "twittear").
-  var message = document.body.children[2].children[1].children[0].children[0].children[0];
-  if (message = '') {
-    document.getElementById('sumit-message').disabled = false;
-  } else {
-    // Contar la cantidad de caracteres de forma regresiva.
-    var counter = document.getElementById('counter');
-    var message = document.getElementById('message-input');
-    // message.addEventListener('keyup', function() {
-    //   'use strict';// uso estricto
-    //   counter.textContent = 140 - this.value.length;
-    //   // counter.value = counter.value.length - 140;
-    //   // Versión 0.0.3
-    //   //
-    //   if (counter.textContent < 0) {// Si pasa los 140 caracteres, mostrar el contador en negativo.
-    //     counter.style.color = '#f00';
-    //     document.getElementById('sumit-message').disabled = true; // Si pasa los 140 caracteres, deshabilitar el botón.
-    //   // Si pasa los 120 caracteres, mostrar el contador con OTRO color.
-    //   } else if (counter.textContent < 10) {
-    //     counter.style.color = '#32CD32';
-    //     document.getElementById('sumit-message').disabled = false;
-    //   // Si pasa los 130 caracteres, mostrar el contador con OTRO color.
-    //   } else if (counter.textContent < 20) {
-    //     counter.style.color = '#FFD700';
-    //     document.getElementById('sumit-message').disabled = false;
-    //   } else {
-    //     counter.style.color = '#000';
-    //     document.getElementById('sumit-message').disabled = false;
-    //   }
-    // });
-  }
 });
-var counter = document.getElementById('counter');
-var message = document.getElementById('message-input');
-message.onkeyup = function() {
-  'use strict';// uso estricto
-  counter.textContent = 140 - this.value.length;
-  // Versión 0.0.3
-  if (counter.textContent < 0) {// Si pasa los 140 caracteres, mostrar el contador en negativo.
-    counter.style.color = '#f00';
-    document.getElementById('sumit-message').disabled = true; // Si pasa los 140 caracteres, deshabilitar el botón.
-    // Si pasa los 120 caracteres, mostrar el contador con OTRO color.
-  } else if (counter.textContent < 10) {
-    counter.style.color = '#32CD32';
-    document.getElementById('sumit-message').disabled = false;
-    // Si pasa los 130 caracteres, mostrar el contador con OTRO color.
-  } else if (counter.textContent < 20) {
-    counter.style.color = '#FFD700';
-    document.getElementById('sumit-message').disabled = false;
-  } else {
-    counter.style.color = '#000';
-    document.getElementById('sumit-message').disabled = false;
-  }
-};
-
-// Versión 0.0.4
-//
 // Al presionar enter(/n) que crezca el textarea de acuerdo al tamaño del texto.
-
-
-// Versión 0.0.5 (Extra)
-//
-// Si la cantidad de caracteres ingresados (sin dar un enter), supera al tamaño del textarea por defecto, debe de agregarse una línea más para que no
-// aparezca el scroll. (Si en caso aplica)
+var message = document.body.children[2].children[1].children[0].children[0].children[0];
+message.addEventListener('keypress', function(event) {
+  var enter = event.keyCode; // asignando al enter un valor
+  // console.log(document.body.children[2].children[1].children[0].children[0].children[0].getAttribute('rows'));
+  var rows = 2;
+  if (enter === 13) {// si la tecla es 13 ;eso significa que es la tecla enter
+    rows = rows + 1; // aumentar una fila
+  }
+  message.setAttribute('rows', rows);
+});
